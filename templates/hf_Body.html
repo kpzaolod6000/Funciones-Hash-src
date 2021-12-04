@@ -1,0 +1,55 @@
+<link rel="stylesheet" href="{{url_for('static',filename='css/hf_textarea.css')}}">
+<div class="p-5 text-center bg-image" style="
+background-image: url('https://t3.ftcdn.net/jpg/02/48/82/78/360_F_248827805_AIRtRZgQdf5ouTInIL9HAeE73BgReSZe.jpg');
+/* background-image: url('https://wallpaperaccess.com/full/2473853.jpg'); */
+background-size: 100% 100%;
+height: 580px;">
+    <div class="container">
+        <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+            <div class="d-flex justify-content-center align-items-center h-100">
+                <div class="text-white" id="form-Hash">
+
+                    <h1 class="mb-3">Funcion Hash {{HF_type}}</h1>
+
+                    <div class="input-group mb-3">
+                        <textarea class="form-control" id="message" rows="7" aria-label="With textarea"></textarea>
+                    </div>
+
+                    <div id="Key-HMAC">
+                        {% if HF_type == "HMAC" %}
+                        <div class='input-group input-group-sm mb-3'>
+                            <div class='input-group-prepend'>
+                                <span class='input-group-text' id='inputGroup-sizing-sm'>Clave:</span> 
+                            </div> 
+                            <input type='text' class='form-control' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm' id="key_value">
+                        
+                            <select id = "select_algorithm" class="mdb-select md-form colorful-select dropdown-primary" >
+                                <option value="0" selected>Seleccione un Algoritmo</option>
+                                <option value="md5">MD5</option>
+                                <option value="sha1">SHA-1</option>
+                                <option value="sha256">SHA-256</option>
+                                <option value="sha384">SHA-384</option>
+                                <option value="sha512">SHA-512</option>
+                            </select>
+                        </div>
+                        {% endif %}
+                    </div>
+
+
+
+                    <div class="d-flex justify-content-end">
+                        <button type="button" id="Generate" class="btn btn-primary">Generar</button>
+                    </div>
+
+                    <div class="result-transf">
+                        <label for="text-tr" class="d-flex justify-content-start">Resultado</label>
+                        <div class="input-group mb-3">
+                            <textarea type="text" class="form-control" id="textHash" disabled></textarea>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

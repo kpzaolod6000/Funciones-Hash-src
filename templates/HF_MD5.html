@@ -1,0 +1,20 @@
+
+{% extends "layout.html" %}
+
+{% block navbar_right %}
+{% include "nav-bar.html" %}
+
+
+{% endblock %}
+
+
+{% block content %}
+
+<link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
+<script src="{{ url_for('static', filename='js/generate_HF_MD5.js') }}"></script>
+{% include "hf_Body.html" %}
+{% endblock %}
+
+
+
+
